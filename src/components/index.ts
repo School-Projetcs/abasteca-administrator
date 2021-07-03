@@ -1,3 +1,3 @@
-export { Container } from './container';
+export * from './styled-system';
 export { Main } from './main';
 export { Button } from './button';
