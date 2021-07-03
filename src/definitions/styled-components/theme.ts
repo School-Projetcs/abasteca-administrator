@@ -1,11 +1,13 @@
 // #region Global Imports
-import { DefaultTheme } from 'styled-components';
+import { BaseTheme } from 'styled-components';
 // #endregion Global Imports
-import { common } from './common';
 
-const light: DefaultTheme = {
+const theme: BaseTheme = {
     colors: {
-        ...common.colors,
+        transparent: 'transparent',
+        darkGrey: '#282C34',
+        blackGrey: '#20232A',
+        white: '#FFFFFF',
         toggleBorder: '#ABB7C4',
         gradient: 'linear-gradient(#39598A, #79D7ED)',
         background: '#282C34',
@@ -16,4 +18,4 @@ const light: DefaultTheme = {
     },
 };
 
-export { light };
+export { theme };

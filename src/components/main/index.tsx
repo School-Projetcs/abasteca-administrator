@@ -10,17 +10,13 @@ export const Main: React.FC = () => {
             style={{ backgroundColor: '#282c34' }}
         >
             <Container>
-                <h1 className="display-2 text-white">superplate</h1>
-                <p className="lead text-white">
-                    The frontend boilerplate with superpowers!
-                </p>
                 <Button
                     variant="primary"
                     size="lg"
                     href="https://pankod.github.io/superplate/"
                     target="_blank"
                 >
-                    Docs
+                    login
                 </Button>
             </Container>
         </div>
