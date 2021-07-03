@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Main } from '@components';
+import { Container, Main } from '@components';
 
 const Home: React.FC = () => {
     return (
-        <div className="d-flex flex-column min-vh-100">
+        <Container className="min-vh-100" bg="primary">
             <Main />
-        </div>
+        </Container>
     );
 };
 

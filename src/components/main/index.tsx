@@ -1,17 +1,14 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 
 import { Button } from '@components';
 
 export const Main: React.FC = () => {
     return (
-        <div
-            className="text-center py-4"
-            style={{ backgroundColor: '#282c34' }}
-        >
+        <div className="text-center py-4">
             <Container>
                 <Button
-                    variant="primary"
+                    variant="success"
                     size="lg"
                     href="https://pankod.github.io/superplate/"
                     target="_blank"
