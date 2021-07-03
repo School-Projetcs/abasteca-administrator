@@ -1,20 +1,18 @@
-// #region Global Imports
 import { BaseTheme } from 'styled-components';
-// #endregion Global Imports
 
 const theme: BaseTheme = {
     colors: {
         transparent: 'transparent',
-        darkGrey: '#282C34',
-        blackGrey: '#20232A',
         white: '#FFFFFF',
-        toggleBorder: '#ABB7C4',
-        gradient: 'linear-gradient(#39598A, #79D7ED)',
-        background: '#282C34',
+        gradient: 'linear-gradient(#2f95dc, #0083B0)',
         headerBg: '#20232A',
-        cardsBg: '#FFFFFF',
-        textColor: '#000000',
-        dodgerBlue: '#007BFF',
+        primary: '#007AFF',
+        textColor: '#212121',
+        textPrimary: '#FFFFFF',
+        textSecondary: '#757575',
+        error: '#DD4B3E',
+        success: '#27AE60',
+        accent: '#F2994A',
     },
 };
 
