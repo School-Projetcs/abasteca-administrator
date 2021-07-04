@@ -11,6 +11,7 @@ const Home: React.FC = () => {
             justifyContent="space-between"
             alignItems="center"
             height="100vh"
+            padding={['16px 0 0 0', '26px']}
         >
             <Headline />
             <SignIn />
