@@ -1,11 +1,19 @@
 import React from 'react';
 
-import { Container, Main } from '@components';
+import { Container, Headline, SignIn } from '@components';
 
 const Home: React.FC = () => {
     return (
-        <Container className="min-vh-100" bg="primary">
-            <Main />
+        <Container
+            bg="primary"
+            display="flex"
+            flexDirection={['column', 'row']}
+            justifyContent="space-between"
+            alignItems="center"
+            height="100vh"
+        >
+            <Headline />
+            <SignIn />
         </Container>
     );
 };
