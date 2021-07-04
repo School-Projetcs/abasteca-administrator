@@ -1,3 +1,4 @@
+import { ContainerProps } from '@components/styled-system/types';
 import styled from 'styled-components';
 import {
     border,
@@ -5,20 +6,12 @@ import {
     layout,
     space,
     typography,
-    flexbox,
     position,
     boxShadow,
+    PositionProps,
 } from 'styled-system';
-import { ContainerProps, CardSignInProps } from './types';
 
-export const Container = styled.div<ContainerProps>`
-    ${border};
-    ${color};
-    ${layout};
-    ${space};
-    ${typography};
-    ${flexbox};
-`;
+interface CardSignInProps extends ContainerProps, PositionProps {}
 
 export const CardSignIn = styled.div<CardSignInProps>`
     display: flex;
