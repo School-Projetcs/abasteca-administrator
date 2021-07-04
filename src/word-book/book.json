@@ -1,0 +1,13 @@
+{
+  "display-name": "Abasteça",
+  "shared": {
+    "forms": {
+      "phone-input": "Número de telefone"
+    }
+  },
+  "home": {
+    "login": {
+      "name": "Entrar"
+    }
+  }
+}
