@@ -4,6 +4,7 @@ type CommonColors = 'transparent' | 'white';
 
 type ExtendedColors =
     | CommonColors
+    | 'gradient'
     | 'headerBg'
     | 'primary'
     | 'textColor'

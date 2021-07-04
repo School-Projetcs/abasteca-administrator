@@ -1,6 +1,6 @@
-import { BaseTheme } from 'styled-components';
+import { DefaultTheme } from 'styled-components';
 
-const theme: BaseTheme = {
+const theme: DefaultTheme = {
     colors: {
         transparent: 'transparent',
         white: '#FFFFFF',

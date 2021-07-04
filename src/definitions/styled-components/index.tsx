@@ -1,15 +1,17 @@
 import React from 'react';
-import { ThemeProvider, BaseTheme } from 'styled-components';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 import { theme } from './theme';
 
-export const ThemeContext = React.createContext<BaseTheme>({});
+export const ThemeContext = React.createContext<DefaultTheme>(
+    {} as DefaultTheme,
+);
 
 export const useTheme = () => {
-    const { theme } = React.useContext(ThemeContext);
+    const theme = React.useContext(ThemeContext);
 
     return {
-        theme,
+        ...theme,
     };
 };
 
