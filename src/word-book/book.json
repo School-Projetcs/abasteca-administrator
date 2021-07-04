@@ -2,7 +2,8 @@
   "display-name": "Abasteça",
   "shared": {
     "forms": {
-      "phone-input": "Número de telefone"
+      "phone-input": "Número de telefone",
+      "continue": "continuar"
     }
   },
   "home": {

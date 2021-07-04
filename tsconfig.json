@@ -31,6 +31,12 @@
       "@styles": [
         "src/styles"
       ],
+      "@word-book/*": [
+        "src/word-book/*"
+      ],
+      "@word-book": [
+        "src/word-book"
+      ],
       "@public/*": [
         "public/*"
       ],
