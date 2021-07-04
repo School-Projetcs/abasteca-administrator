@@ -23,7 +23,10 @@ export const capitalizeWord = (word: string) =>
  * @param values replace {value index} by paced values
  * @returns a final strings according the params given if the path exist or wordPath joined with '.' and undefined if there's no correspondence
  */
-const meaning = ({ wordPath, capitalized = false, values }: MeaningProps) => {
+const meaning = (wordPath: string, props?: MeaningProps) => {
+    const capitalized: boolean = props?.capitalized && props.capitalized;
+    const values: string[] | number[] = (props?.values && props.values) || [];
+
     const wordPaths = wordPath.split('.');
     let text = `[${wordPath}.undefined]`;
     const currentPathJson = book;
