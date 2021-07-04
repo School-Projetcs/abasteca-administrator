@@ -13,7 +13,7 @@ import {
 
 interface CardSignInProps extends ContainerProps, PositionProps {}
 
-export const CardSignIn = styled.div<CardSignInProps>`
+export const CardSignIn = styled.form<CardSignInProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
