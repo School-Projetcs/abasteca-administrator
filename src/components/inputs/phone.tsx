@@ -22,7 +22,7 @@ export const Phone: React.FC<InputProps> = ({ value, changeValue }) => {
     };
 
     return (
-        <InputContainer label={meaning('shared.forms.phone-input')}>
+        <InputContainer label={meaning('shared.forms.phone-input')} errorMsg="">
             <span>{meaning('shared.forms.phone-prefix')}</span>
             <input
                 value={value}

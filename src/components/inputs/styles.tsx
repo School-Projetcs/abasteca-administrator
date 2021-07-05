@@ -62,6 +62,10 @@ const Container = styled.div<ContainerProps>`
         font-size: 22px;
         font-weight: bold;
         color: ${({ theme }) => theme.colors.primary};
+        cursor: pointer;
+        &:hover {
+            opacity: 0.8;
+        }
     }
 
     ${space};

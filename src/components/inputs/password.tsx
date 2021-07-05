@@ -18,7 +18,7 @@ export const Password: React.FC<InputProps> = ({ value, changeValue }) => {
     };
 
     const onFocus = () => {
-        changePlaceholder('Bladbafo123');
+        changePlaceholder('Boyla123');
     };
 
     const onBlur = () => {
