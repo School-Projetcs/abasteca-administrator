@@ -26,7 +26,7 @@ export const SignIn: React.FC = () => {
             onSubmit={onSubmit}
         >
             <h2>{meaning('home.login.name')}</h2>
-            <div>Qualquer coisa</div>
+            <div id="anything">Qualquer coisa</div>
             <Phone value={phone} changeValue={setPhone} />
             <Password value={password} changeValue={setPassword} />
             <Button variant="primary" mt={'16px'}>
