@@ -6,14 +6,10 @@ import {
     space,
     typography,
     flexbox,
+    compose,
 } from 'styled-system';
 import { ContainerProps } from './types';
 
 export const Container = styled.div<ContainerProps>`
-    ${border};
-    ${color};
-    ${layout};
-    ${space};
-    ${typography};
-    ${flexbox};
+    ${compose(border, color, layout, space, typography, flexbox)};
 `;
