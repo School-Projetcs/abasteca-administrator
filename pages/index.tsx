@@ -10,7 +10,7 @@ const Home: React.FC = () => {
             flexDirection={['column', 'row']}
             justifyContent="space-between"
             alignItems="center"
-            height="100vh"
+            minHeight="100vh"
             padding={['16px 0 0 0', '26px']}
         >
             <Headline />
