@@ -1,10 +1,14 @@
 import React, { ChangeEvent } from 'react';
 
-import { Button } from '@components';
+import { Button, Phone, Password } from '@components';
 import { CardSignIn } from './styles';
 import { meaning } from '@word-book';
+import { useState } from 'react';
 
 export const SignIn: React.FC = () => {
+    const [phone, setPhone] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
     };
@@ -23,7 +27,8 @@ export const SignIn: React.FC = () => {
         >
             <h2>{meaning('home.login.name')}</h2>
             <div>Qualquer coisa</div>
-
+            <Phone value={phone} changeValue={setPhone} />
+            <Password value={password} changeValue={setPassword} />
             <Button variant="primary" mt={'16px'}>
                 {meaning('shared.forms.continue', { capitalized: true })}
             </Button>

@@ -12,7 +12,7 @@ export const Button = styled.button<ButtonProps>`
     font-family: inherit;
     max-width: 320px;
     width: 100%;
-    height: 52px;
+    height: ${({ theme }) => theme.inputHeight.md};
     border: unset;
     border-radius: 8px;
     font-size: 16px;

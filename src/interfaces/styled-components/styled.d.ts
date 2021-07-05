@@ -14,12 +14,20 @@ type ExtendedColors =
     | 'success'
     | 'accent';
 
-declare module 'styled-components' {
-    export interface BaseTheme {
-        colors: Record<CommonColors, string>;
-    }
+type InputHeight = {
+    // sm: string;
+    md: string;
+    // lg: string;
+};
 
-    export interface DefaultTheme extends BaseTheme {
+type BorderRadius = {
+    md: string;
+};
+
+declare module 'styled-components' {
+    export interface DefaultTheme {
         colors: Record<ExtendedColors, string>;
+        inputHeight: InputHeight;
+        borderRadius: BorderRadius;
     }
 }

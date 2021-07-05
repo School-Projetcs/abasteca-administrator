@@ -14,6 +14,12 @@ const theme: DefaultTheme = {
         success: '#27AE60',
         accent: '#F2994A',
     },
+    inputHeight: {
+        md: '52px',
+    },
+    borderRadius: {
+        md: '8px',
+    },
 };
 
 export { theme };

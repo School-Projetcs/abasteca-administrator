@@ -3,7 +3,9 @@
   "shared": {
     "forms": {
       "phone-input": "Número de telefone",
-      "continue": "continuar"
+      "password-input": "Senha",
+      "continue": "continuar",
+      "phone-prefix": "+244"
     }
   },
   "home": {
