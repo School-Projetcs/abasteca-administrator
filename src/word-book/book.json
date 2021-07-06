@@ -3,7 +3,11 @@
   "pages": {
     "home": "Bem Vindo",
     "gas-stations": {
-      "name": "Estações de combustivél"
+      "name": "Estações de combustivél",
+      "all": "Todas",
+      "diesel": "Gasóleo",
+      "gasoline": "Gasólina",
+      "empty": "Sem combustivel"
     },
     "employees": {
       "name": "Funcionários",

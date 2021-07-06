@@ -1,19 +1,26 @@
 import React from 'react';
 import { Container } from '@components';
 import { Tabs, TabPanel } from '@components/tabs';
+import { meaning } from '@word-book';
 
 export const EmployeesContainer: React.FC = () => {
     return (
         <Container flexGrow={1} marginLeft={[undefined, '32px']}>
-            <Tabs tabs={['Cator', 'Croc', 'Sarcosuchus']}>
-                <TabPanel label="Gator">
-                    See ya later, <em>Alligator</em>!
+            <Tabs
+                tabs={[
+                    meaning('pages.employees.all'),
+                    meaning('pages.employees.watchers'),
+                    meaning('pages.employees.managers'),
+                ]}
+            >
+                <TabPanel label={meaning('pages.employees.all')}>
+                    See Here todos os Funcionário
                 </TabPanel>
-                <TabPanel label="Croc">
-                    After 'while, <em>Crocodile</em>!
+                <TabPanel label={meaning('pages.employees.watchers')}>
+                    See Here Todos os vigias
                 </TabPanel>
-                <TabPanel label="Sarcosuchus">
-                    Nothing to see here, this tab is <em>extinct</em>!
+                <TabPanel label={meaning('pages.employees.managers')}>
+                    See Here Todos os Gestores
                 </TabPanel>
             </Tabs>
         </Container>
