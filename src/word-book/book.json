@@ -7,13 +7,25 @@
       "all": "Todas",
       "diesel": "Gasóleo",
       "gasoline": "Gasólina",
-      "empty": "Sem combustivel"
+      "empty": "Sem combustivel",
+      "table": {
+        "name": "Nome",
+        "street": "Localização",
+        "fuel": "Combustivél"
+      }
     },
     "employees": {
       "name": "Funcionários",
       "all": "Todos",
       "managers": "Gestores",
-      "watchers": "Vigias"
+      "watchers": "Vigias",
+      "table": {
+        "name": "Nome",
+        "contacts": "Contactos",
+        "function": "Função",
+        "pump": "Bomba",
+        "created-alt": "Data de Inicio"
+      }
     },
     "register": {
       "name": "Cadastrar Empregados",

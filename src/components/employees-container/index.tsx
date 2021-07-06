@@ -6,7 +6,11 @@ import { AllEmployees, Managers, Watchers } from '@components/employees';
 
 export const EmployeesContainer: React.FC = () => {
     return (
-        <Container flexGrow={1} marginLeft={[undefined, '32px']}>
+        <Container
+            flexGrow={1}
+            marginLeft={[undefined, '32px']}
+            overflow="auto"
+        >
             <Tabs
                 tabs={[
                     meaning('pages.employees.all'),

@@ -5,6 +5,7 @@ export const TabsContainer = styled.div`
     .tab-content {
         background-color: ${({ theme }) => theme.colors.white};
         border-radius: ${({ theme }) => theme.borderRadius.md};
+        overflow: auto;
         padding: 8px 16px;
         margin-top: 0;
         width: 100%;
