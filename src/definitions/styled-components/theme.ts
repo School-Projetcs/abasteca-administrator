@@ -9,6 +9,7 @@ const theme: DefaultTheme = {
         primary: '#007AFF',
         textColor: '#212121',
         textPrimary: '#FFFFFF',
+        background: '#F2F2F2',
         textSecondary: '#757575',
         error: '#DD4B3E',
         success: '#27AE60',

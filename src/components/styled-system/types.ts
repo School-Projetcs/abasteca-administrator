@@ -6,6 +6,7 @@ import {
     LayoutProps,
     FlexboxProps,
     BoxShadowProps,
+    PositionProps,
 } from 'styled-system';
 
 export interface ContainerProps
@@ -15,6 +16,7 @@ export interface ContainerProps
         SpaceProps,
         LayoutProps,
         FlexboxProps,
+        PositionProps,
         BoxShadowProps {
     children: React.ReactNode;
 }

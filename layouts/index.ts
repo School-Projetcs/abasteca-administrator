@@ -1,2 +1,2 @@
 export { EmptyLayout } from './empty-layout';
-export { MenuLayout } from './menu-layout';
+export { AdminLayout } from './menu-layout';

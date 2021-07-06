@@ -10,8 +10,9 @@ function MyApp({ Component, pageProps }: MyAppProps): JSX.Element {
     return (
         <StyledThemeProvider>
             <GlobalStyles />
-            <Layout />
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </StyledThemeProvider>
     );
 }
