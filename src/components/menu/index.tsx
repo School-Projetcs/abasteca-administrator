@@ -3,9 +3,11 @@ import { CgMenuRight, CgClose } from 'react-icons/cg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { MenuContainer, Toggle } from './styles';
 import { Routes } from '@constants';
 import { meaning } from '@word-book';
+import { Container } from '@components';
+
+import { MenuContainer, Toggle } from './styles';
 
 export const Menu: React.FC = () => {
     const [toggle, changeToggle] = useState<boolean>(false);
@@ -23,11 +25,28 @@ export const Menu: React.FC = () => {
             >
                 {(!toggle && <CgMenuRight />) || <CgClose />}
             </Toggle>
+            {!toggle && (
+                <Container
+                    bg="background"
+                    display={['flex', 'none']}
+                    position="fixed"
+                    height={78}
+                    top={0}
+                    left={0}
+                    right={0}
+                >
+                    <div />
+                </Container>
+            )}
             <MenuContainer
                 bg="white"
                 width={['100%', '300px']}
                 height={['100vh', '400px']}
-                position={['absolute', 'relative']}
+                top={[0]}
+                left={[0]}
+                right={[0]}
+                bottom={[0]}
+                position={['fixed', 'relative']}
                 display={[(toggle && 'flex') || 'none', 'flex']}
                 borderRadius={['', '8px']}
             >

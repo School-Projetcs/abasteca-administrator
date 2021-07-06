@@ -9,7 +9,7 @@ export const AdminLayout: React.FC = ({ children }) => {
             minHeight="100vh"
             flexDirection={['column', 'row']}
             alignItems={[undefined, 'center']}
-            paddingX={['16px', '32px']}
+            padding={['88px 16px 16px 16px', '32px']}
             justifyContent={[undefined, 'space-between']}
         >
             <Menu />

@@ -13,7 +13,7 @@ import {
 
 export const Toggle = styled.span`
     display: flex;
-    position: absolute;
+    position: fixed;
     padding: 12px;
     font-size: 22px;
     top: 16px;

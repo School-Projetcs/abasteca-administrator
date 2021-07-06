@@ -6,7 +6,9 @@ export const TabsContainer = styled.div`
         background-color: ${({ theme }) => theme.colors.white};
         border-radius: ${({ theme }) => theme.borderRadius.md};
         padding: 8px 16px;
+        margin-top: 0;
         width: 100%;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 30%), 0 1px 2px 0 rgb(0 0 0 / 20%);
     }
 
     .tab-list-item {
