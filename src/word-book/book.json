@@ -23,8 +23,7 @@
         "name": "Nome",
         "contacts": "Contactos",
         "function": "Função",
-        "pump": "Bomba",
-        "created-alt": "Data de Inicio"
+        "pump": "Bomba"
       }
     },
     "register": {

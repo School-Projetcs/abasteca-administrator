@@ -9,31 +9,12 @@ export const AllEmployees: React.FC = () => {
         meaning('pages.employees.table.contacts'),
         meaning('pages.employees.table.function'),
         meaning('pages.employees.table.pump'),
-        meaning('pages.employees.table.created-alt'),
     ];
 
     const fakeData = [
-        [
-            'Dálcio Garcia',
-            '+244 931 396 454',
-            'Vigia',
-            'Patriota',
-            '24-05-10998',
-        ],
-        [
-            'Ezedélio Garcia',
-            '+244 931 396 454',
-            'Vigia',
-            'Talatona',
-            '24-05-10998',
-        ],
-        [
-            'Manuel Muetunda',
-            '+244 931 396 454',
-            'Manager',
-            'n/a',
-            '24-05-10998',
-        ],
+        ['Dálcio Garcia', '+244 931 396 454', 'Vigia', 'Patriota'],
+        ['Ezedélio Garcia', '+244 931 396 454', 'Vigia', 'Talatona'],
+        ['Manuel Muetunda', '+244 931 396 454', 'Manager', 'n/a'],
     ];
 
     return (
