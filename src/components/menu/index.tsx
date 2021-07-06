@@ -4,7 +4,7 @@ import { CgMenuRight, CgClose } from 'react-icons/cg';
 import { MenuContainer, Toggle } from './styles';
 
 export const Menu: React.FC = () => {
-    const [toggle, changeToggle] = useState<boolean>(true);
+    const [toggle, changeToggle] = useState<boolean>(false);
 
     const handleToggle = () => {
         changeToggle(!toggle);
