@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '@components';
+import { GasStationsContainer } from '@components';
 import { AdminLayout } from '@layouts';
 
 import { AdminPageProps } from './types';
@@ -11,9 +11,7 @@ const GasStations: AdminPageProps = () => {
             <Head>
                 <title>{meaning('pages.gas-stations')}</title>
             </Head>
-            <Container>
-                <h2>Welcome to Gás station</h2>
-            </Container>
+            <GasStationsContainer />
         </>
     );
 };

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Container } from '@components';
+import { RegisterContainer } from '@components';
 import { AdminLayout } from '@layouts';
 
 import { AdminPageProps } from './types';
@@ -11,9 +11,7 @@ const Register: AdminPageProps = () => {
             <Head>
                 <title>{meaning('pages.register')}</title>
             </Head>
-            <Container>
-                <h2>Welcome to register</h2>
-            </Container>
+            <RegisterContainer />
         </>
     );
 };
