@@ -1,16 +1,23 @@
-import { Container } from '@components';
+import Head from 'next/head';
 import { AdminLayout } from '@layouts';
+import { Container } from '@components';
 
 import { AdminPageProps } from './types';
+import { meaning } from '@word-book';
 
-const AdminHomePage: AdminPageProps = () => {
+const Employees: AdminPageProps = () => {
     return (
-        <Container bg="background">
-            <h2>Hello from Admin Home Page</h2>
-        </Container>
+        <>
+            <Head>
+                <title>{meaning('pages.employees')}</title>
+            </Head>
+            <Container>
+                <h2>Welcome to employees</h2>
+            </Container>
+        </>
     );
 };
 
-AdminHomePage.layout = AdminLayout;
+Employees.layout = AdminLayout;
 
-export default AdminHomePage;
+export default Employees;

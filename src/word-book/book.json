@@ -1,5 +1,11 @@
 {
   "display-name": "Abasteça",
+  "pages": {
+    "home": "Bem Vindo",
+    "gas-stations": "Estações de combustivél",
+    "employees": "Empregados",
+    "register": "Cadastrar Empregados"
+  },
   "shared": {
     "forms": {
       "phone-input": "Número de telefone",

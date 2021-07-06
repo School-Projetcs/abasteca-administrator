@@ -38,7 +38,6 @@ export const Toggle = styled.span`
 
 export const MenuContainer = styled.aside<ContainerProps>`
     @media screen and (min-width: 40em) {
-        /* transform: translateY(25%) translateX(32px); */
         box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 2px 0 rgb(0 0 0 / 10%);
     }
 
@@ -67,5 +66,9 @@ export const MenuContainer = styled.aside<ContainerProps>`
         }
     }
 
+    #active {
+        color: ${({ theme }) => theme.colors.white};
+        background-color: ${({ theme }) => theme.colors.primary};
+    }
     ${compose(border, color, layout, space, typography, flexbox, position)};
 `;

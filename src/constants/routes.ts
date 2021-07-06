@@ -1,7 +1,6 @@
 export const Routes = {
     home: '/',
-    admin_home: '/admin',
-    employees: '/admin/employees',
+    employees: '/admin',
     gas_stations: '/admin/gas-stations',
     register: '/admin/register',
 };
