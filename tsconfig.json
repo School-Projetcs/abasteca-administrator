@@ -52,9 +52,6 @@
       "@interfaces": [
         "src/interfaces"
       ],
-      "@layouts/*": [
-        "layouts/*"
-      ],
       "@layouts": [
         "layouts"
       ],
@@ -66,6 +63,9 @@
       ],
       "@utils": [
         "src/utils"
+      ],
+      "@constants": [
+        "src/constants"
       ]
     }
   },

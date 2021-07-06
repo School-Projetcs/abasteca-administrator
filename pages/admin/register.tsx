@@ -1,5 +1,5 @@
-import { Container, Menu } from '@components';
-import { AdminLayout } from '@layouts/menu-layout';
+import { Container } from '@components';
+import { AdminLayout } from '@layouts';
 
 import { AdminPageProps } from './types';
 

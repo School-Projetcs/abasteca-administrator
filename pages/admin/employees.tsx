@@ -1,4 +1,4 @@
-import { AdminLayout } from '@layouts/menu-layout';
+import { AdminLayout } from '@layouts';
 
 import { AdminPageProps } from './types';
 
