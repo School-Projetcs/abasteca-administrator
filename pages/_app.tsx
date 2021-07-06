@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledThemeProvider } from '@definitions/styled-components';
 import GlobalStyles from '@styles/globalStyles';
-import { EmptyLayout } from '@layouts/empty-layout';
+import { EmptyLayout } from '@layouts';
 import { MyAppProps } from '@types/page';
 
 function MyApp({ Component, pageProps }: MyAppProps): JSX.Element {
