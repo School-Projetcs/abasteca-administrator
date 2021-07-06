@@ -1,7 +1,13 @@
 import React from 'react';
 import { Container } from '@components';
-import { Tabs, TabPanel } from '@components/tabs';
+import { Tabs } from '@components/tabs';
 import { meaning } from '@word-book';
+import {
+    AllGasStations,
+    Diesel,
+    EmptyGasStations,
+    Gasoline,
+} from '@components/gas-stations';
 
 export const GasStationsContainer: React.FC = () => {
     return (
@@ -14,18 +20,10 @@ export const GasStationsContainer: React.FC = () => {
                     meaning('pages.gas-stations.empty'),
                 ]}
             >
-                <TabPanel label={meaning('pages.gas-stations.all')}>
-                    See Here todas as bombas
-                </TabPanel>
-                <TabPanel label={meaning('pages.gas-stations.gasoline')}>
-                    See Here Todas as bombas a gasólina
-                </TabPanel>
-                <TabPanel label={meaning('pages.gas-stations.diesel')}>
-                    See Here Todas as bombas a Gasóleo
-                </TabPanel>
-                <TabPanel label={meaning('pages.gas-stations.empty')}>
-                    See Here todas as bombas vazias
-                </TabPanel>
+                <AllGasStations />
+                <Gasoline />
+                <Diesel />
+                <EmptyGasStations />
             </Tabs>
         </Container>
     );

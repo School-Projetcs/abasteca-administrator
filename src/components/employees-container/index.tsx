@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container } from '@components';
-import { Tabs, TabPanel } from '@components/tabs';
+import { Tabs } from '@components/tabs';
 import { meaning } from '@word-book';
+import { AllEmployees, Managers, Watchers } from '@components/employees';
 
 export const EmployeesContainer: React.FC = () => {
     return (
@@ -13,15 +14,9 @@ export const EmployeesContainer: React.FC = () => {
                     meaning('pages.employees.managers'),
                 ]}
             >
-                <TabPanel label={meaning('pages.employees.all')}>
-                    See Here todos os Funcionário
-                </TabPanel>
-                <TabPanel label={meaning('pages.employees.watchers')}>
-                    See Here Todos os vigias
-                </TabPanel>
-                <TabPanel label={meaning('pages.employees.managers')}>
-                    See Here Todos os Gestores
-                </TabPanel>
+                <AllEmployees />
+                <Managers />
+                <Watchers />
             </Tabs>
         </Container>
     );
