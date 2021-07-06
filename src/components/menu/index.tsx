@@ -53,17 +53,17 @@ export const Menu: React.FC = () => {
                 <ul>
                     <Link href={Routes.employees}>
                         <li id={pathname === Routes.employees && 'active'}>
-                            {meaning('pages.employees')}
+                            {meaning('pages.employees.name')}
                         </li>
                     </Link>
                     <Link href={Routes.register}>
                         <li id={pathname === Routes.register && 'active'}>
-                            {meaning('pages.register')}
+                            {meaning('pages.register.name')}
                         </li>
                     </Link>
                     <Link href={Routes.gas_stations}>
                         <li id={pathname === Routes.gas_stations && 'active'}>
-                            {meaning('pages.gas-stations')}
+                            {meaning('pages.gas-stations.name')}
                         </li>
                     </Link>
                 </ul>

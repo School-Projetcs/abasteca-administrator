@@ -2,9 +2,20 @@
   "display-name": "Abasteça",
   "pages": {
     "home": "Bem Vindo",
-    "gas-stations": "Estações de combustivél",
-    "employees": "Empregados",
-    "register": "Cadastrar Empregados"
+    "gas-stations": {
+      "name": "Estações de combustivél"
+    },
+    "employees": {
+      "name": "Funcionários",
+      "all": "Todos",
+      "managers": "Gestores",
+      "watchers": "Vigias"
+    },
+    "register": {
+      "name": "Cadastrar Empregados",
+      "add-managers": "Adicionar Gestor",
+      "add-watchers": "Adicionar Vigia"
+    }
   },
   "shared": {
     "forms": {
