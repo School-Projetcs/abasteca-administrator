@@ -1,12 +1,16 @@
 import React from 'react';
-import { AppProps } from 'next/app';
 import { StyledThemeProvider } from '@definitions/styled-components';
 import GlobalStyles from '@styles/globalStyles';
+import { EmptyLayout } from '@layouts/empty-layout';
+import { MyAppProps } from '@types/page';
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: MyAppProps): JSX.Element {
+    const Layout = Component.layout || EmptyLayout;
+
     return (
         <StyledThemeProvider>
             <GlobalStyles />
+            <Layout />
             <Component {...pageProps} />
         </StyledThemeProvider>
     );

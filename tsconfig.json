@@ -52,6 +52,18 @@
       "@interfaces": [
         "src/interfaces"
       ],
+      "@layouts/*": [
+        "layouts/*"
+      ],
+      "@layouts": [
+        "layouts"
+      ],
+      "@types/*": [
+        "types/*"
+      ],
+      "@types": [
+        "type"
+      ],
       "@utils": [
         "src/utils"
       ]
