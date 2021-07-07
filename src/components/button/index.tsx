@@ -1,13 +1,15 @@
+import { FC } from 'react';
 import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
 import { variant, VariantArgs, space, SpaceProps } from 'styled-system';
 
 type ButtonVariants = 'primary' | 'success' | 'error';
 
-interface ButtonProps extends VariantArgs, SpaceProps {
+interface ButtonContainerProps extends VariantArgs, SpaceProps {
     variant: ButtonVariants;
 }
 
-export const Button = styled.button<ButtonProps>`
+const ButtonContainer = styled.button<ButtonContainerProps>`
     appearance: none;
     font-family: inherit;
     max-width: 320px;
@@ -41,3 +43,16 @@ export const Button = styled.button<ButtonProps>`
         },
     })};
 `;
+
+type ButtonProps = ButtonContainerProps & {
+    isLoading?: boolean;
+};
+
+export const Button: FC<ButtonProps> = ({ isLoading, children, ...props }) => (
+    <ButtonContainer {...props}>
+        {(isLoading && (
+            <Loader type="ThreeDots" color="#fff" height={30} width={30} />
+        )) ||
+            children}
+    </ButtonContainer>
+);
