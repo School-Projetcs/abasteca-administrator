@@ -3,6 +3,7 @@ import { StyledThemeProvider } from '@definitions/styled-components';
 import GlobalStyles from '@styles/globalStyles';
 import { EmptyLayout } from '@layouts';
 import { MyAppProps } from '@types/page';
+import AuthProvider from '@context';
 
 function MyApp({ Component, pageProps }: MyAppProps): JSX.Element {
     const Layout = Component.layout || EmptyLayout;
@@ -10,9 +11,11 @@ function MyApp({ Component, pageProps }: MyAppProps): JSX.Element {
     return (
         <StyledThemeProvider>
             <GlobalStyles />
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <AuthProvider>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </AuthProvider>
         </StyledThemeProvider>
     );
 }

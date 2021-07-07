@@ -65,7 +65,7 @@
         "types/*"
       ],
       "@types": [
-        "type"
+        "types"
       ],
       "@utils": [
         "src/utils"
