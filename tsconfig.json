@@ -25,6 +25,12 @@
       "@components": [
         "src/components"
       ],
+      "@context*": [
+        "context/*"
+      ],
+      "@context": [
+        "context"
+      ],
       "@styles/*": [
         "src/styles/*"
       ],
@@ -66,6 +72,9 @@
       ],
       "@constants": [
         "src/constants"
+      ],
+      "@services": [
+        "services"
       ]
     }
   },
