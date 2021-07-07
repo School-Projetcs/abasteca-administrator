@@ -1,10 +1,10 @@
-import { AuthContextProps } from '@context/types';
+import { AuthContextState } from '@context/types';
 
-const signOut = (prevState: AuthContextProps) => ({
-    ...prevState,
-    isSignOut: true,
-    userToken: null,
-    data: null,
-});
-
-export default signOut;
+export const signOut = (prevState: AuthContextState) =>
+    ({
+        ...prevState,
+        isSignOut: true,
+        isLoading: false,
+        userToken: null,
+        data: null,
+    } as AuthContextState);

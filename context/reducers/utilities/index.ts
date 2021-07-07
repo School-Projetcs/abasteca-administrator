@@ -1,2 +1,3 @@
-export { default as signIn } from './sign-in';
-export { default as signOut } from './sign-out';
+export { signIn } from './sign-in';
+export { signOut } from './sign-out';
+export { startLoading } from './start-loading';

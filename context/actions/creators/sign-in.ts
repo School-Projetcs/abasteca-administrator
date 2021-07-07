@@ -1,38 +1,45 @@
-import { auth, database } from '@services';
+import { emailBuilder } from '@components/utils';
+import { auth, database, firebase } from '@services';
 import { Dispatch } from 'react';
 
 import { SIGN_IN } from '../../action-types';
 import { ReducerActionProps, SignInContextProps, UserData } from '../../types';
 
-const signIn =
+export const signIn =
     (dispatch: Dispatch<ReducerActionProps>) =>
-    async ({ password, phoneNumber }: SignInContextProps) => {
+    async ({ phone, password }: SignInContextProps) => {
+        const email = emailBuilder(phone);
         try {
             auth()
-                .signInWithEmailAndPassword(phoneNumber, password)
+                .signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
+                    // get token
+                    console.log(user);
 
                     if (!user) return null;
+                    console.log('here');
 
                     const { uid } = user;
                     const dbRef = database().ref();
 
                     const getUser = dbRef
                         .child('users')
-                        .child('clients')
+                        .child('administrators')
                         .child(uid)
                         .once('value');
 
                     getUser
                         .then((snap) => {
                             if (snap.exists()) {
-                                const data = snap.val() as UserData;
-                                dispatch({
-                                    type: SIGN_IN,
-                                    userToken: uid,
-                                    data,
-                                });
+                                const data = snap.val(); //as UserData;
+                                console.log(data);
+
+                                // dispatch({
+                                //     type: SIGN_IN,
+                                //     userToken: uid,
+                                //     data,
+                                // });
                             }
                         })
                         .catch((err) => {
@@ -44,8 +51,6 @@ const signIn =
                     console.log(errorCode);
                 });
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
     };
-
-export default signIn;

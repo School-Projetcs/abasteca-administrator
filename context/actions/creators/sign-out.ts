@@ -4,7 +4,7 @@ import { Dispatch } from 'react';
 
 import { SIGN_OUT } from '../../action-types';
 
-const signOut = (dispatch: Dispatch<ReducerActionProps>) => () => {
+export const signOut = (dispatch: Dispatch<ReducerActionProps>) => () => {
     try {
         auth()
             .signOut()
@@ -15,5 +15,3 @@ const signOut = (dispatch: Dispatch<ReducerActionProps>) => () => {
         console.log('saindo');
     }
 };
-
-export default signOut;

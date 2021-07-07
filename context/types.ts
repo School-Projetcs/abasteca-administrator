@@ -5,14 +5,18 @@ export type SignInContextProps = {
 
 export type AuthContextState = {
     isSignIn: boolean;
+    isLoading: boolean;
     userToken: string;
     data: UserData;
 };
 
-export type AuthContextProps = AuthContextState & {
+export type AuthContextActionsProps = {
     signIn: (props: SignInContextProps) => void;
     signOut: () => void;
+    startLoading: () => void;
 };
+
+export type AuthContextProps = AuthContextState & AuthContextActionsProps;
 
 export type UserData = {
     avatar: string;
@@ -21,12 +25,8 @@ export type UserData = {
     phone: string;
 };
 
-export type ReducerActionProps =
-    | {
-          type: string;
-      }
-    | {
-          type: string;
-          userToken: string;
-          data: UserData;
-      };
+export type ReducerActionProps = {
+    type: string;
+    userToken?: string;
+    data?: UserData;
+};

@@ -14,16 +14,11 @@ import {
     ReducerActionProps,
 } from './types';
 
-const AuthContext = createContext<AuthContextProps>({
-    isSignIn: false,
-    userToken: undefined,
-    data: undefined,
-    signIn: () => undefined,
-    signOut: () => undefined,
-} as AuthContextProps);
+const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 
 const initialState: AuthContextState = {
     isSignIn: false,
+    isLoading: false,
     userToken: undefined,
     data: undefined,
 };
