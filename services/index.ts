@@ -11,8 +11,10 @@ const clientCredentials = {
 };
 
 export const firebaseInit = () => {
-    if (!firebase.app.length) {
+    try {
         firebase.initializeApp(clientCredentials);
+    } catch (error) {
+        //
     }
 };
 
