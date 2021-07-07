@@ -1,4 +1,6 @@
-export const isValidPhone = (phone: string, handleError?: any) => {
+type HandleError = (err: string) => void;
+
+export const isValidPhone = (phone: string, handleError?: HandleError) => {
     const p = phone.replace(/ /g, '');
 
     if (p.length === 9 && p.match(/[^\d]/g) === null) {
