@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-hook-form
+  C:\Program Files\nodejs\node.exe C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/react-simple-snackbar -D
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\OpenJDK\openjdk-11.0.10_9\bin;C:\Program Files\Git\cmd;C:\Users\dalci\AppData\Local\Android\Sdk\emulator;C:\Users\dalci\AppData\Local\Android\Sdk\tools;C:\Users\dalci\AppData\Local\Android\Sdk\tools\bin;C:\Users\dalci\AppData\Local\Android\Sdk\platform-tools;C:\Users\dalci\AppData\Local\Yarn\bin;C:\Users\dalci\AppData\Local\Microsoft\WindowsApps;C:\Users\dalci\AppData\Roaming\npm;C:\Users\dalci\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Bandizip\;C:\ffmpeg\bin
+  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\OpenJDK\openjdk-11.0.10_9\bin;C:\Program Files\Git\cmd;C:\Users\dalci\AppData\Local\Android\Sdk\emulator;C:\Users\dalci\AppData\Local\Android\Sdk\tools;C:\Users\dalci\AppData\Local\Android\Sdk\tools\bin;C:\Users\dalci\AppData\Local\Android\Sdk\platform-tools;C:\Users\dalci\AppData\Local\Yarn\bin;C:\Users\dalci\AppData\Local\Microsoft\WindowsApps;C:\Users\dalci\AppData\Roaming\npm;C:\Users\dalci\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Bandizip\;C:\ffmpeg\bin;
 
 Yarn version: 
   1.22.10
@@ -14,16 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-hook-form: ESOCKETTIMEDOUT
-      at ClientRequest.<anonymous> (C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141289:19)
+  Error: https://registry.yarnpkg.com/@types%2freact-simple-snackbar: Not found
+      at Request.params.callback [as _callback] (C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\dalci\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
       at Object.onceWrapper (events.js:421:28)
-      at ClientRequest.emit (events.js:315:20)
-      at TLSSocket.emitRequestTimeout (_http_client.js:784:9)
-      at Object.onceWrapper (events.js:421:28)
-      at TLSSocket.emit (events.js:327:22)
-      at TLSSocket.Socket._onTimeout (net.js:483:8)
-      at listOnTimeout (internal/timers.js:554:17)
-      at processTimers (internal/timers.js:497:7)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
 
 npm manifest: 
   {
@@ -58,6 +59,8 @@ npm manifest:
       "react": "17.0.2",
       "react-dom": "17.0.2",
       "react-icons": "^4.2.0",
+      "react-loader-spinner": "^4.0.0",
+      "react-simple-snackbar": "^1.1.11",
       "styled-components": "^5.2.1",
       "styled-system": "^5.1.5"
     },
@@ -179,6 +182,13 @@ Lockfile:
     version "7.12.5"
     resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
     integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+    dependencies:
+      regenerator-runtime "^0.13.4"
+  
+  "@babel/runtime@^7.13.10", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+    version "7.14.6"
+    resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.6.tgz#535203bc0892efc7dec60bdc27b2ecf6e409062d"
+    integrity sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==
     dependencies:
       regenerator-runtime "^0.13.4"
   
@@ -1844,6 +1854,14 @@ Lockfile:
     integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
     dependencies:
       esutils "^2.0.2"
+  
+  dom-helpers@^5.0.1:
+    version "5.2.1"
+    resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-5.2.1.tgz#d9400536b2bf8225ad98fe052e029451ac40e902"
+    integrity sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==
+    dependencies:
+      "@babel/runtime" "^7.8.7"
+      csstype "^3.0.2"
   
   dom-storage@2.1.0:
     version "2.1.0"
@@ -3744,7 +3762,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.1.3.tgz#8c99b3cf53f3a91c68226ffde7bde81d7f904116"
     integrity sha512-MG5r82wBzh7pSKDRa9y+vllNHz3e3d4CNj1PQE4BQYxLme0gKYYBm9YENq+UkEikyZ0XbiGWxYlVw3Rl9O/U8g==
   
-  prop-types@15.7.2:
+  prop-types@15.7.2, prop-types@^15.6.2, prop-types@^15.7.2:
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -3885,10 +3903,35 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
   
+  react-loader-spinner@^4.0.0:
+    version "4.0.0"
+    resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-4.0.0.tgz#43d9e71b0574219f64216933c28ef5faa12262f6"
+    integrity sha512-RU2vpEej6G4ECei0h3q6bgLU10of9Lw5O+4AwF/mtkrX5oY20Sh/AxoPJ7etbrs/7Q3u4jN5qwCwGLRKCHpk6g==
+    dependencies:
+      prop-types "^15.7.2"
+  
   react-refresh@0.8.3:
     version "0.8.3"
     resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
     integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
+  
+  react-simple-snackbar@^1.1.11:
+    version "1.1.11"
+    resolved "https://registry.yarnpkg.com/react-simple-snackbar/-/react-simple-snackbar-1.1.11.tgz#e1470f49d04f8e1e941e62f459cca27d1b2167a1"
+    integrity sha512-l+RMkIoqnOXBQaQbirk4yGaEH5Jeynup/AQBGaq7hCPIIraOQi2RFVthZIM4Ms6sFtdSYxQ8emN4/jI30l7gXw==
+    dependencies:
+      "@babel/runtime" "^7.13.10"
+      react-transition-group "^4.4.1"
+  
+  react-transition-group@^4.4.1:
+    version "4.4.2"
+    resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.2.tgz#8b59a56f09ced7b55cbd53c36768b922890d5470"
+    integrity sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==
+    dependencies:
+      "@babel/runtime" "^7.5.5"
+      dom-helpers "^5.0.1"
+      loose-envify "^1.4.0"
+      prop-types "^15.6.2"
   
   react@17.0.2:
     version "17.0.2"

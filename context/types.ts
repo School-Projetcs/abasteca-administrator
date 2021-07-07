@@ -11,9 +11,13 @@ export type AuthContextState = {
 };
 
 export type AuthContextActionsProps = {
-    signIn: (props: SignInContextProps) => void;
-    signOut: () => void;
+    signIn: (
+        props: SignInContextProps,
+        callback?: (str: string) => void,
+    ) => void;
+    signOut: (callback?: () => void) => void;
     startLoading: () => void;
+    stopLoading: () => void;
 };
 
 export type AuthContextProps = AuthContextState & AuthContextActionsProps;

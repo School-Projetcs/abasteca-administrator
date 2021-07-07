@@ -1,4 +1,5 @@
 import React from 'react';
+import SnackbarProvider from 'react-simple-snackbar';
 import { StyledThemeProvider } from '@definitions/styled-components';
 import GlobalStyles from '@styles/globalStyles';
 import { EmptyLayout } from '@layouts';
@@ -14,11 +15,14 @@ function MyApp({ Component, pageProps }: MyAppProps): JSX.Element {
     return (
         <StyledThemeProvider>
             <GlobalStyles />
-            <AuthProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </AuthProvider>
+
+            <SnackbarProvider>
+                <AuthProvider>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </AuthProvider>
+            </SnackbarProvider>
         </StyledThemeProvider>
     );
 }

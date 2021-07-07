@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from 'react';
+import { useSnackbar } from 'react-simple-snackbar';
 
 import { Button, Phone, Password } from '@components';
 import { CardSignIn } from './styles';
@@ -9,12 +10,18 @@ import { useAuthContext } from '@context';
 export const SignIn: React.FC = () => {
     const [phone, setPhone] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const { signIn, isLoading, startLoading } = useAuthContext();
+    const [openSnackbar] = useSnackbar();
+    const { signIn, isLoading, startLoading, stopLoading } = useAuthContext();
+
+    const onError = (err: string) => {
+        stopLoading();
+        openSnackbar(err);
+    };
 
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         startLoading();
-        signIn({ phone, password });
+        signIn({ phone, password }, onError);
     };
 
     return (
