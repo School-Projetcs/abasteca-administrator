@@ -1,12 +1,15 @@
 export type SignInContextProps = {
     password: string;
-    phoneNumber: string;
+    phone: string;
 };
 
-export type AuthContextProps = {
+export type AuthContextState = {
     isSignIn: boolean;
     userToken: string;
     data: UserData;
+};
+
+export type AuthContextProps = AuthContextState & {
     signIn: (props: SignInContextProps) => void;
     signOut: () => void;
 };

@@ -1,7 +1,8 @@
-import React from 'react';
+import { ReducerActionProps } from '@context/types';
+import { Dispatch } from 'react';
 import { signIn, signOut } from './creators';
 
-const authActions = (dispatch: React.Dispatch<unknown>) => ({
+const authActions = (dispatch: Dispatch<ReducerActionProps>) => ({
     signIn: signIn(dispatch),
     signOut: signOut(dispatch),
 });

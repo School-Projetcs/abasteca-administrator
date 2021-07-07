@@ -8,21 +8,29 @@ import React, {
 
 import actions from './actions';
 import reducers from './reducers';
-import { AuthContextProps, ReducerActionProps } from './types';
+import {
+    AuthContextProps,
+    AuthContextState,
+    ReducerActionProps,
+} from './types';
 
-const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
-
-const initialState: AuthContextProps = {
+const AuthContext = createContext<AuthContextProps>({
     isSignIn: false,
-    userToken: null,
-    data: null,
-    signIn: null,
-    signOut: null,
+    userToken: undefined,
+    data: undefined,
+    signIn: () => undefined,
+    signOut: () => undefined,
+} as AuthContextProps);
+
+const initialState: AuthContextState = {
+    isSignIn: false,
+    userToken: undefined,
+    data: undefined,
 };
 
 const AuthProvider: FC = ({ children }) => {
     const [state, dispatch] = useReducer<
-        React.Reducer<AuthContextProps, ReducerActionProps>
+        React.Reducer<AuthContextState, ReducerActionProps>
     >(reducers, initialState);
 
     const value = useMemo(() => ({ ...actions(dispatch), ...state }), [state]);
