@@ -3,7 +3,7 @@ import { AuthContextState } from '@context/types';
 export const signOut = (prevState: AuthContextState) =>
     ({
         ...prevState,
-        isSignOut: true,
+        isAuthenticated: false,
         isLoading: false,
         userToken: null,
         data: null,

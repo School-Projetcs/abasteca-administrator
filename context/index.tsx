@@ -17,7 +17,7 @@ import {
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 
 const initialState: AuthContextState = {
-    isSignIn: false,
+    isAuthenticated: false,
     isLoading: false,
     userToken: undefined,
     data: undefined,

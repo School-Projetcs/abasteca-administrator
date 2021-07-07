@@ -1,8 +1,11 @@
 import { emailBuilder } from '@components/utils';
+import { Routes, Tokens } from '@constants';
 import { auth, database } from '@services';
+import Router from 'next/router';
+import { setCookie } from 'nookies';
 import { Dispatch } from 'react';
 
-import { SIGN_IN } from '../../action-types';
+import { SIGN_IN, SIGN_OUT } from '../../action-types';
 import { ReducerActionProps, SignInContextProps, UserData } from '../../types';
 
 export const signIn =
@@ -12,13 +15,13 @@ export const signIn =
 
         auth()
             .signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
                 const user = userCredential.user;
 
                 if (!user) return null;
-                console.log(user);
 
                 const { uid } = user;
+
                 const dbRef = database().ref();
 
                 const getUser = dbRef
@@ -28,25 +31,38 @@ export const signIn =
                     .once('value');
 
                 getUser
-                    .then((snap) => {
+                    .then(async (snap) => {
                         if (snap.exists()) {
-                            const data = snap.val(); //as UserData;
-                            console.log(data);
+                            const data = snap.val() as UserData;
 
-                            // dispatch({
-                            //     type: SIGN_IN,
-                            //     userToken: uid,
-                            //     data,
-                            // });
+                            setCookie(undefined, Tokens.sig_in, uid, {
+                                maxAge: 60 * 60 * 4,
+                            });
+
+                            dispatch({
+                                type: SIGN_IN,
+                                userToken: uid,
+                                data,
+                            });
+
+                            Router.push(Routes.employees);
                         }
                     })
-                    .catch((err) => {
-                        console.log(err);
+                    .catch(() => {
+                        auth()
+                            .signOut()
+                            .then(() => {
+                                dispatch({ type: SIGN_OUT });
+                            });
+                        if (callback)
+                            callback(
+                                'Aconteceu um erro. Tente novamente mais tarde',
+                            );
                     });
             })
             .catch((error) => {
                 const errorCode = error.code;
-                if (callback) {
+                if (callback && errorCode) {
                     if (errorCode === 'auth/user-not-found') {
                         return callback(
                             `O ${phone} não é um administrador do abasteça`,
@@ -59,7 +75,9 @@ export const signIn =
                         );
                     }
 
-                    callback('Aconteceu um erro. Tente novamente mais tarde');
+                    return callback(
+                        'Aconteceu um erro. Tente novamente mais tarde',
+                    );
                 }
             });
     };

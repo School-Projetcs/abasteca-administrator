@@ -4,7 +4,7 @@ export type SignInContextProps = {
 };
 
 export type AuthContextState = {
-    isSignIn: boolean;
+    isAuthenticated: boolean;
     isLoading: boolean;
     userToken: string;
     data: UserData;
@@ -18,6 +18,7 @@ export type AuthContextActionsProps = {
     signOut: (callback?: () => void) => void;
     startLoading: () => void;
     stopLoading: () => void;
+    restoreSession: (refreshToken: string) => void;
 };
 
 export type AuthContextProps = AuthContextState & AuthContextActionsProps;

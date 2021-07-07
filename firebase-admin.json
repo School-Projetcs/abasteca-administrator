@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "abasteca-startup",
+  "private_key_id": "28ef193892b75b426666a88542ad84fcdea98dad",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC2Mlc4uB+ivZEG\newJRu83o9nYCyiVOH7WQYMnPvbI/ntqY/SsjK4411/AcAnnxekzMOsv6r2ARBeIN\nWMvGm+DDbMGYwJZcvaKlpvid7h87i8pDfkg0P2lsE6MK22ihFvsEwZxseChFyV1i\n+tS7wM1atN5olNhmp0yq9tU+KZc8BvZs1UtT73GPguhCVPg/aGVJgRui1wDp84x+\nDHcMeAiZMibEfDaeQQmEsPlnDlV3lwug2TDgJdn7BLLJ/IO8BGAC0WVzkoQ2WBkf\n0JlACWMP8iu8HOdLs43gmhGpSSt6yO6GZJw3fIrfG/RHDZI6XlWk5O9XTX8WoY1k\ns8h577lPAgMBAAECggEAGnv11s5Y9uiUaLs/yo7Ar0EIRX6J7rHITDztiQ+blgjq\n4LtIZnvh16zUf9XSUQpEmJlhZkbQ8ZiH1AXY1T16bh3khGZWVRPRzT+YuyhOjPLU\ni3wTVdjz45x1IlJjgqsbAQV9zfynagGL3CP3AXXUw/8vp0cfr8hY6i8oLzmPfM+M\nxM2/XuVAmZwSKUuOVvGAOGZvPhB3I5XUA01b9i97AiI7F0XGumXnQVCZ3+ngsNl9\nKRcQa6jGMbb8r+M6cT1ORkYpiDSry9HbEGrt9GF5iyKcl2TwhsCHjBgJfsjtcLZL\nBh0KRXZT8B1N6rx9E9IN3Ws+/eDebpBLOq/+oh1X2QKBgQD7ivdJvuQJETmohUEW\n68+evi0lXlfEe0w6bTVBk/amVmod9wNwSJVI2+mbXot9enF7/Ie2A6lLTVAmk57R\njiIIy/fnYQcapAKLRRusjtEefcRaH3zX5ABNC006t5AsnMQhhz2zRMTjIJCf8sF3\n9TgzH831xvC0GA2z4LP/9oeKtwKBgQC5bM+A+v7Dy8gUV97Nta9zlA6uW2Zw2HN+\nlwEtLewu2dMj3PC/IM8xc0sJepPkNa5y6cOUc4SHaOujhw18h4KpPXmvIa6FaWPX\nBUJl1pMIDSgI/uWUy2ilvFw8MNkWr5ckPY+6l9h++vy66eKUZZt33gxBUsZQA8IC\nM3Fudf+OKQKBgAmC0aLaMukc259BmppxRCJucmqNTKhDOTikVHUsUREtB0omwtyG\nAg8FMaoMQx31eUEE5WS+crJENBmhT0oBI8xNWgxHoOsi9G2rqUY3CDUs8DWwJxpK\nprBDEyJ7OlpVex0BbhXPLdqgqpdBqIsOnJdiRnlaklNc7Xe1sVimS621AoGBAJ13\nOTSYclgGK5CTGqPpIeluF5WcCv/T4Sjkxdv/Pq5+zx6Kl2xISYv+FAAlt4g6yj3O\nJQhhnW98+3dwzlQtpBljGn5OhS3I1T+ZuMxRD6Xrvk79YCwfHWx57H41IXZxgVIG\ncZONNg6HyK5WxtMtAn0l9ZRX3g+/UTebRj3/ORoZAoGBAMIulxVcuHLKurFPH3bF\n5SXXNzqEZMplzdSeaAQpRGUbRtNJqyI+OlxAOp7OtW+1qzjbNdT43dPtEd+uu04n\nSE68r1d/tnWQj8xzpoNPeYZcsmxwG1pVh2LWlDve8qfxBBMFM/tBrtZO+t2RKHZl\nRVXP3RSbPec/x/xkUGBV/7/Q\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-i5rqg@abasteca-startup.iam.gserviceaccount.com",
+  "client_id": "104548786464896594519",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-i5rqg%40abasteca-startup.iam.gserviceaccount.com"
+}

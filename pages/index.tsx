@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { Container, Headline, SignIn } from '@components';
+import { Routes, Tokens } from '@constants';
+import { parseCookies } from 'nookies';
+import { GetServerSideProps } from 'next';
 
 const Home: React.FC = () => {
     return (
@@ -17,6 +20,23 @@ const Home: React.FC = () => {
             <SignIn />
         </Container>
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const { [Tokens.sig_in]: cookie } = parseCookies(context);
+
+    if (cookie) {
+        return {
+            redirect: {
+                destination: Routes.employees,
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {},
+    };
 };
 
 export default Home;

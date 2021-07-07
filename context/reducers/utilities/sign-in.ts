@@ -2,12 +2,12 @@ import { AuthContextState, ReducerActionProps } from '@context/types';
 
 export const signIn = (
     prevState: AuthContextState,
-    action: ReducerActionProps,
+    { userToken, data }: ReducerActionProps,
 ) =>
     ({
         ...prevState,
-        isSignOut: false,
+        isAuthenticated: true,
         isLoading: false,
-        userToken: action?.userToken,
-        data: action?.data,
+        userToken,
+        data,
     } as AuthContextState);
