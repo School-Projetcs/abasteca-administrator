@@ -4,13 +4,16 @@ import { Button, Phone, Password } from '@components';
 import { CardSignIn } from './styles';
 import { meaning } from '@word-book';
 import { useState } from 'react';
+import { useAuthContext } from '@context';
 
 export const SignIn: React.FC = () => {
     const [phone, setPhone] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const { signIn, isLoading } = useAuthContext();
 
     const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
+        signIn({ phone, password });
     };
 
     return (
@@ -26,10 +29,10 @@ export const SignIn: React.FC = () => {
             onSubmit={onSubmit}
         >
             <h2>{meaning('home.login.name')}</h2>
-            <div id="anything">Qualquer coisa</div>
+            <div id="anything">Digite o telefone e a senha</div>
             <Phone value={phone} changeValue={setPhone} />
             <Password value={password} changeValue={setPassword} />
-            <Button variant="primary" mt={'16px'}>
+            <Button variant="primary" mt={'16px'} isLoading={isLoading}>
                 {meaning('shared.forms.continue', { capitalized: true })}
             </Button>
         </CardSignIn>
