@@ -40,6 +40,7 @@ export const Phone: React.FC<InputProps> = ({ value, changeValue }) => {
                 placeholder={placeholder}
                 onFocus={onFocus}
                 onBlur={onBlur}
+                required
             />
         </InputContainer>
     );

@@ -44,6 +44,7 @@ export const Password: React.FC<InputProps> = ({ value, changeValue }) => {
                 onFocus={onFocus}
                 onBlur={onBlur}
                 type={(see && 'text') || 'password'}
+                required
             />
             <span id="eyes" onClick={handleSee}>
                 {(see && <FaRegEye />) || <FaRegEyeSlash />}
