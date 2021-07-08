@@ -5,10 +5,9 @@ import { meaning } from '@word-book';
 import { AdminLayout } from '@layouts';
 import { EmployeesContainer } from '@components';
 
-import { AdminPageProps } from './types';
+import { AdminPageProps } from '@types';
 import { parseCookies } from 'nookies';
 import { Routes, Tokens } from '@constants';
-import { firebaseVerifyIdToken } from 'services/firebase-admin';
 
 const Employees: AdminPageProps = () => {
     return (

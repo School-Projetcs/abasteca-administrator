@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { RegisterContainer } from '@components';
 import { AdminLayout } from '@layouts';
 
-import { AdminPageProps } from './types';
+import { AdminPageProps } from '@types';
 import { meaning } from '@word-book';
 
 const Register: AdminPageProps = () => {
