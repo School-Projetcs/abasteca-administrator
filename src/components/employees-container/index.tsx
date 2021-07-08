@@ -14,8 +14,8 @@ export const EmployeesContainer: React.FC = () => {
             <Tabs
                 tabs={[
                     meaning('pages.employees.all'),
-                    meaning('pages.employees.watchers'),
                     meaning('pages.employees.managers'),
+                    meaning('pages.employees.watchers'),
                 ]}
             >
                 <AllEmployees />
