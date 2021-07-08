@@ -28,6 +28,8 @@ const initialState: AuthContextState = {
     data: undefined,
     allEmployees: undefined,
     allGasStations: undefined,
+    managers: undefined,
+    watchers: undefined,
 };
 
 const AuthProvider: FC = ({ children }) => {
@@ -36,6 +38,8 @@ const AuthProvider: FC = ({ children }) => {
     >(reducers, initialState);
     const [allGasStations, setAllGasStations] = useState<string[][]>([]);
     const [allEmployees, setAllEmployees] = useState<string[][]>([]);
+    const [managers, setManagers] = useState<string[][]>([]);
+    const [watchers, setWatchers] = useState<string[][]>([]);
 
     const value = useMemo(
         () => ({
@@ -43,8 +47,10 @@ const AuthProvider: FC = ({ children }) => {
             ...state,
             allEmployees,
             allGasStations,
+            managers,
+            watchers,
         }),
-        [state, allEmployees, allGasStations],
+        [state, allEmployees, allGasStations, managers, watchers],
     );
 
     useEffect(() => {
@@ -54,8 +60,7 @@ const AuthProvider: FC = ({ children }) => {
             const getGasStations = async () => {
                 try {
                     database()
-                        .ref('gas-stations')
-                        .child('stations')
+                        .ref('gas-stations/stations')
                         .on('value', (snapshot) => {
                             const stations = snapshot.val();
                             const tempPumps = [];
@@ -82,31 +87,13 @@ const AuthProvider: FC = ({ children }) => {
             getGasStations();
         }
     }, []);
-
     useEffect(() => {
         const { [Tokens.sig_in]: cookie } = parseCookies();
 
         if (cookie) {
-            const getAllEmployees = () => {
+            const getWatchers = () => {
                 try {
-                    const tempManagers = [];
                     const tempWatchers = [];
-
-                    database()
-                        .ref('users/managers')
-                        .on('value', (snapshot) => {
-                            const stations = snapshot.val();
-                            console.log('here');
-
-                            Object.keys(stations).map((pump) => {
-                                tempManagers.push([
-                                    stations[pump]?.name, //name:
-                                    stations[pump].phone, //contacts:
-                                    'Gestor', //function:
-                                    'n/a', //pump:
-                                ]);
-                            });
-                        });
 
                     database()
                         .ref('users/watchers')
@@ -123,12 +110,44 @@ const AuthProvider: FC = ({ children }) => {
                                 ]);
                             });
                         });
-                    setAllEmployees([...tempManagers, ...tempWatchers]);
+                    setWatchers([...tempWatchers]);
                 } catch (error) {
                     //
                 }
             };
-            getAllEmployees();
+            getWatchers();
+        }
+    }, []);
+
+    useEffect(() => {
+        const { [Tokens.sig_in]: cookie } = parseCookies();
+
+        if (cookie) {
+            const getManagers = () => {
+                try {
+                    const tempManagers = [];
+
+                    database()
+                        .ref('users/managers')
+                        .on('value', (snapshot) => {
+                            const stations = snapshot.val();
+                            console.log('here');
+
+                            Object.keys(stations).map((pump) => {
+                                tempManagers.push([
+                                    stations[pump]?.name, //name:
+                                    stations[pump].phone, //contacts:
+                                    'Gestor', //function:
+                                    'n/a', //pump:
+                                ]);
+                            });
+                        });
+                    setManagers([...tempManagers]);
+                } catch (error) {
+                    //
+                }
+            };
+            getManagers();
         }
     }, []);
 
