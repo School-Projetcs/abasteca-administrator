@@ -5,7 +5,6 @@ import { useSnackbar } from 'react-simple-snackbar';
 import { GenericInput, Password, Phone } from '@components/inputs';
 import { Button } from '@components/button';
 import { useAuthContext } from '@context';
-import { Container } from '@components/styled-system';
 import { database, auth } from '@services';
 import { emailBuilder } from '@components/utils';
 import { RegisterForm } from './styles';
@@ -42,7 +41,7 @@ export const AddManagers: React.FC = () => {
             auth()
                 .createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    var user = userCredential.user;
+                    const user = userCredential.user;
                     if (user) {
                         database()
                             .ref(`users/managers/${user.uid}`)
@@ -53,7 +52,7 @@ export const AddManagers: React.FC = () => {
                             });
                     }
                 })
-                .catch((error) => {
+                .catch(() => {
                     onError('Aconteceu alguma coisa tente denovo');
                 });
         } catch (err) {

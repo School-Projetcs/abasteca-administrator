@@ -54,7 +54,7 @@ export const AddWatchers: React.FC = () => {
             auth()
                 .createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
-                    var user = userCredential.user;
+                    const user = userCredential.user;
                     if (user) {
                         database()
                             .ref(`users/watchers/${user.uid}`)
@@ -65,7 +65,7 @@ export const AddWatchers: React.FC = () => {
                             });
                     }
                 })
-                .catch((error) => {
+                .catch(() => {
                     onError('Aconteceu alguma coisa tente denovo');
                 });
         } catch (err) {
