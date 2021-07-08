@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "firebase": "^8.7.0",
-    "firebase-admin": "9.4",
     "next": "10.2.0",
     "next-compose-plugins": "^2.2.1",
     "next-firebase-auth": "^0.13.2",
