@@ -18,7 +18,7 @@ export const Toggle = styled.span`
     font-size: 22px;
     top: 16px;
     right: 16px;
-    z-index: 1;
+    z-index: 11;
 
     &:hover {
         cursor: pointer;
