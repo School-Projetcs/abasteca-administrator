@@ -8,6 +8,7 @@ import { useAuthContext } from '@context';
 import { Container } from '@components/styled-system';
 import { database, auth } from '@services';
 import { emailBuilder } from '@components/utils';
+import { RegisterForm } from './styles';
 
 export const AddManagers: React.FC = () => {
     const [password, setPassword] = useState<string>('');
@@ -68,33 +69,20 @@ export const AddManagers: React.FC = () => {
 
     return (
         <TabPanel label={meaning('pages.register.add-managers')}>
-            <Container
-                display="flex"
-                flexDirection="column"
-                alignItems="center"
-                textAlign="center"
-                marginBottom="16px"
-            >
-                <form onSubmit={onSubmit}>
-                    <h3>{meaning('pages.register.add-managers')}</h3>
-                    <div id="anything">
-                        Pereencha os dados do novo gestor de bombas.
-                    </div>
-                    <GenericInput
-                        value={name}
-                        changeValue={setName}
-                        label="Nome"
-                    />
-                    <Phone value={phone} changeValue={setPhone} />
-                    <Password value={password} changeValue={setPassword} />
-                    <br />
-                    <Button variant="success" mt={'16px'} isLoading={isLoading}>
-                        {meaning('pages.register.add-managers', {
-                            capitalized: true,
-                        })}
-                    </Button>
-                </form>
-            </Container>
+            <RegisterForm onSubmit={onSubmit}>
+                <h3>{meaning('pages.register.add-managers')}</h3>
+                <div id="anything">
+                    Pereencha os dados do novo gestor de bombas.
+                </div>
+                <GenericInput value={name} changeValue={setName} label="Nome" />
+                <Phone value={phone} changeValue={setPhone} />
+                <Password value={password} changeValue={setPassword} />
+                <Button variant="success" isLoading={isLoading}>
+                    {meaning('pages.register.add-managers', {
+                        capitalized: true,
+                    })}
+                </Button>
+            </RegisterForm>
         </TabPanel>
     );
 };
