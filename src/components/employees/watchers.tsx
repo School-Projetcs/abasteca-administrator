@@ -1,25 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TabPanel } from '@components/tabs';
 import { meaning } from '@word-book';
 import { Table } from '@components/table';
+import { header } from './all-employees';
+import { useAuthContext } from '@context';
 
 export const Watchers: React.FC = () => {
-    const header = [
-        meaning('pages.employees.table.name'),
-        meaning('pages.employees.table.contacts'),
-        meaning('pages.employees.table.function'),
-        meaning('pages.employees.table.pump'),
-    ];
+    const { allEmployees } = useAuthContext();
+    const [watchers, setWatchers] = useState<string[][]>([]);
 
-    const fakeData = [
-        ['Dálcio Garcia', '+244 931 396 454', 'Vigia', 'Patriota'],
-        ['Ezedélio Garcia', '+244 931 396 454', 'Vigia', 'Talatona'],
-        ['Manuel Muetunda', '+244 931 396 454', 'Manager', 'n/a'],
-    ];
+    useEffect(() => {
+        if (allEmployees) {
+            const filter = allEmployees.filter(
+                (row) => row[2].toLowerCase() === 'Manager'.toLowerCase(),
+            );
+            setWatchers([...filter]);
+        }
+    }, []);
 
     return (
-        <TabPanel label={meaning('pages.employees.managers')}>
-            <Table header={header} data={fakeData} />
+        <TabPanel label={meaning('pages.employees.watchers')}>
+            <Table header={header} data={watchers} />
         </TabPanel>
     );
 };

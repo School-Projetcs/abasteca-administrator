@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TabPanel } from '@components/tabs';
 import { meaning } from '@word-book';
 import { Table } from '@components/table';
+import { header } from './all-gas-stations';
+import { useAuthContext } from '@context';
+import { useEffect } from 'react';
 
 export const Gasoline: React.FC = () => {
-    const header = [
-        meaning('pages.gas-stations.table.name'),
-        meaning('pages.gas-stations.table.street'),
-        meaning('pages.gas-stations.table.fuel'),
-    ];
+    const { allGasStations } = useAuthContext();
+    const [gasolines, setGasolines] = useState<string[][]>([]);
 
-    const fakeData = [
-        ['Bomba da Pumangol', 'Ponte Molhada', 'gasolina'],
-        ['Bomba Sonagas', 'Talatona', 'gasoleo'],
-        ['Bomba da Pumangol Benfica', 'Benfica', 'vazio'],
-    ];
+    useEffect(() => {
+        if (allGasStations) {
+            const filter = allGasStations.filter(
+                (row) => row[1].toLowerCase() === 'Gasólina'.toLowerCase(),
+            );
+            setGasolines([...filter]);
+        }
+    }, []);
 
     return (
         <TabPanel label={meaning('pages.gas-stations.gasoline')}>
-            <Table header={header} data={fakeData} />
+            <Table header={header} data={gasolines} />
         </TabPanel>
     );
 };

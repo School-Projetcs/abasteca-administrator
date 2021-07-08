@@ -2,23 +2,27 @@ import { meaning } from '@word-book';
 import React from 'react';
 import { TabPanel } from '@components/tabs';
 import { Table } from '@components/table';
+import { header } from './all-employees';
+import { useAuthContext } from '@context';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export const Managers: React.FC = () => {
-    const header = [
-        meaning('pages.employees.table.name'),
-        meaning('pages.employees.table.contacts'),
-        meaning('pages.employees.table.function'),
-        meaning('pages.employees.table.pump'),
-    ];
+    const { allEmployees } = useAuthContext();
+    const [managers, setManagers] = useState<string[][]>([]);
 
-    const fakeData = [
-        ['Dálcio Garcia', '+244 931 396 454', 'Vigia', 'Patriota'],
-        ['Ezedélio Garcia', '+244 931 396 454', 'Vigia', 'Talatona'],
-        ['Manuel Muetunda', '+244 931 396 454', 'Manager', 'n/a'],
-    ];
+    useEffect(() => {
+        if (allEmployees) {
+            const filter = allEmployees.filter(
+                (row) => row[2].toLowerCase() === 'Manager'.toLowerCase(),
+            );
+            setManagers([...filter]);
+        }
+    }, []);
+
     return (
         <TabPanel label={meaning('pages.employees.watchers')}>
-            <Table header={header} data={fakeData} />
+            <Table header={header} data={managers} />
         </TabPanel>
     );
 };

@@ -8,6 +8,8 @@ export type AuthContextState = {
     isLoading: boolean;
     userToken: string;
     data: UserData;
+    allGasStations: string[][];
+    allEmployees: string[][];
 };
 
 export type AuthContextActionsProps = {
