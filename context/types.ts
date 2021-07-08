@@ -3,15 +3,20 @@ export type SignInContextProps = {
     phone: string;
 };
 
+export type Employees = {
+    watchers: string[][];
+    managers: string[][];
+};
+
+export type GasStations = { stations: string[][] };
+
 export type AuthContextState = {
     isAuthenticated: boolean;
     isLoading: boolean;
     userToken: string;
     data: UserData;
-    allGasStations: string[][];
-    allEmployees: string[][];
-    watchers: string[][];
-    managers: string[][];
+    employees: Employees;
+    gasStations: GasStations;
 };
 
 export type AuthContextActionsProps = {
@@ -22,7 +27,8 @@ export type AuthContextActionsProps = {
     signOut: (callback?: () => void) => void;
     startLoading: () => void;
     stopLoading: () => void;
-    restoreSession: (refreshToken: string) => void;
+    updateEmployees: (props: Employees) => void;
+    updateGasStations: (props: GasStations) => void;
 };
 
 export type AuthContextProps = AuthContextState & AuthContextActionsProps;
@@ -38,4 +44,6 @@ export type ReducerActionProps = {
     type: string;
     userToken?: string;
     data?: UserData;
+    employees?: Employees;
+    gasStations?: GasStations;
 };

@@ -6,11 +6,13 @@ import { header } from './all-employees';
 import { useAuthContext } from '@context';
 
 export const Managers: React.FC = () => {
-    const { managers } = useAuthContext();
+    const {
+        employees: { managers },
+    } = useAuthContext();
 
     return (
         <TabPanel label={meaning('pages.employees.watchers')}>
-            <Table header={header} data={managers} />
+            {managers && <Table header={header} data={managers} />}
         </TabPanel>
     );
 };

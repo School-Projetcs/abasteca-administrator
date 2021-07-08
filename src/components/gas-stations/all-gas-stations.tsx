@@ -11,11 +11,13 @@ export const header = [
 ];
 
 export const AllGasStations: React.FC = () => {
-    const { allGasStations } = useAuthContext();
+    const {
+        gasStations: { stations },
+    } = useAuthContext();
 
     return (
         <TabPanel label={meaning('pages.gas-stations.all')}>
-            <Table header={header} data={allGasStations} />
+            <Table header={header} data={stations} />
         </TabPanel>
     );
 };

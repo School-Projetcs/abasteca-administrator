@@ -7,12 +7,14 @@ import { useAuthContext } from '@context';
 import { useEffect } from 'react';
 
 export const Gasoline: React.FC = () => {
-    const { allGasStations } = useAuthContext();
+    const {
+        gasStations: { stations },
+    } = useAuthContext();
     const [gasolines, setGasolines] = useState<string[][]>([]);
 
     useEffect(() => {
-        if (allGasStations) {
-            const filter = allGasStations.filter(
+        if (stations) {
+            const filter = stations.filter(
                 (row) =>
                     row[1].toLowerCase() === 'Gasólina'.toLowerCase() ||
                     row[1].toLowerCase() === 'Todas'.toLowerCase(),

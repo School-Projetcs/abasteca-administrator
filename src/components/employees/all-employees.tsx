@@ -12,11 +12,15 @@ export const header = [
 ];
 
 export const AllEmployees: React.FC = () => {
-    const { managers, watchers } = useAuthContext();
+    const {
+        employees: { managers, watchers },
+    } = useAuthContext();
 
     return (
         <TabPanel label={meaning('pages.employees.all')}>
-            <Table header={header} data={[...managers, ...watchers]} />
+            {managers && watchers && (
+                <Table header={header} data={[...managers, ...watchers]} />
+            )}
         </TabPanel>
     );
 };

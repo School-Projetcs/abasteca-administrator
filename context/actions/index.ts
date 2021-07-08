@@ -5,7 +5,8 @@ import {
     signOut,
     startLoading,
     stopLoading,
-    restoreSession,
+    updateEmployees,
+    updateGasStations,
 } from './creators';
 
 const authActions = (dispatch: Dispatch<ReducerActionProps>) =>
@@ -14,7 +15,8 @@ const authActions = (dispatch: Dispatch<ReducerActionProps>) =>
         signOut: signOut(dispatch),
         startLoading: startLoading(dispatch),
         stopLoading: stopLoading(dispatch),
-        restoreSession: restoreSession(dispatch),
+        updateGasStations: updateGasStations(dispatch),
+        updateEmployees: updateEmployees(dispatch),
     } as AuthContextActionsProps);
 
 export default authActions;

@@ -1,5 +1,6 @@
-export const RESTORE_TOKEN = 'RESTORE_TOKEN';
 export const START_LOADING = 'START_LOADING';
 export const STOP_LOADING = 'STOP_LOADING';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
+export const UPDATE_EMPLOYEES = 'UPDATE_EMPLOYEES';
+export const UPDATE_GAS_STATIONS = 'UPDATE_GAS_STATIONS';
