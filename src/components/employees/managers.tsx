@@ -4,21 +4,9 @@ import { TabPanel } from '@components/tabs';
 import { Table } from '@components/table';
 import { header } from './all-employees';
 import { useAuthContext } from '@context';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 export const Managers: React.FC = () => {
-    const { allEmployees } = useAuthContext();
-    const [managers, setManagers] = useState<string[][]>([]);
-
-    useEffect(() => {
-        if (allEmployees) {
-            const filter = allEmployees.filter(
-                (row) => row[2].toLowerCase() === 'Gestor'.toLowerCase(),
-            );
-            setManagers([...filter]);
-        }
-    }, []);
+    const { managers } = useAuthContext();
 
     return (
         <TabPanel label={meaning('pages.employees.watchers')}>
