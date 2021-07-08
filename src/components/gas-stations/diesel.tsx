@@ -12,7 +12,7 @@ export const Diesel: React.FC = () => {
     useEffect(() => {
         if (allGasStations) {
             const filter = allGasStations.filter(
-                (row) => row[1].toLowerCase() === 'Gasóleo'.toLowerCase(),
+                (row) => row[1].toLowerCase() === 'Gasóleo'.toLowerCase() || row[1].toLowerCase() === 'Todas'.toLowerCase(),
             );
             setDiesels([...filter]);
         }
