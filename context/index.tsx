@@ -89,35 +89,40 @@ const AuthProvider: FC = ({ children }) => {
         if (cookie) {
             const getAllEmployees = () => {
                 try {
-                    const usersRes = database().ref('users');
                     const tempManagers = [];
                     const tempWatchers = [];
 
-                    usersRes.child('managers').on('value', (snapshot) => {
-                        const stations = snapshot.val();
+                    database()
+                        .ref('users/managers')
+                        .on('value', (snapshot) => {
+                            const stations = snapshot.val();
+                            console.log('here');
 
-                        Object.keys(stations).map((pump) => {
-                            tempManagers.push([
-                                stations[pump]?.name, //name:
-                                stations[pump], //contacts:
-                                'Gestor', //function:
-                                'n/a', //pump:
-                            ]);
+                            Object.keys(stations).map((pump) => {
+                                tempManagers.push([
+                                    stations[pump]?.name, //name:
+                                    stations[pump].phone, //contacts:
+                                    'Gestor', //function:
+                                    'n/a', //pump:
+                                ]);
+                            });
                         });
-                    });
-                    usersRes.child('watchers').on('value', (snapshot) => {
-                        const stations = snapshot.val();
 
-                        Object.keys(stations).map((pump) => {
-                            tempWatchers.push([
-                                stations[pump]?.name, // name:
-                                stations[pump]?.phone, // contacts:
-                                'Vígia', // function:
-                                stations[pump]?.station_name, // pump:
-                            ]);
+                    database()
+                        .ref('users/watchers')
+                        .on('value', (snapshot) => {
+                            const stations = snapshot.val();
+                            console.log('here too');
+
+                            Object.keys(stations).map((pump) => {
+                                tempWatchers.push([
+                                    stations[pump]?.name, // name:
+                                    stations[pump]?.phone, // contacts:
+                                    'Vigia', // function:
+                                    stations[pump]?.station_name, // pump:
+                                ]);
+                            });
                         });
-                    });
-
                     setAllEmployees([...tempManagers, ...tempWatchers]);
                 } catch (error) {
                     //
