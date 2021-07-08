@@ -6,8 +6,8 @@ import { useAuthContext } from '@context';
 
 export const header = [
     meaning('pages.gas-stations.table.name'),
-    meaning('pages.gas-stations.table.street'),
     meaning('pages.gas-stations.table.fuel'),
+    meaning('pages.gas-stations.table.street'),
 ];
 
 export const AllGasStations: React.FC = () => {
