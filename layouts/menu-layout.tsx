@@ -8,7 +8,7 @@ export const AdminLayout: React.FC = ({ children }) => {
             display="flex"
             minHeight="100vh"
             flexDirection={['column', 'row']}
-            alignItems={[undefined, 'center']}
+            alignItems={[undefined, 'flex-start']}
             padding={['88px 16px 16px 16px', '32px']}
             justifyContent={[undefined, 'flex-end']}
         >
