@@ -40,14 +40,15 @@ export const Menu: React.FC = () => {
                 </Container>
             )}
             <MenuContainer
+                alignSelf={[undefined, 'flex-start']}
                 bg="white"
                 width={['100%', '300px']}
                 height={['100vh', '400px']}
-                top={[0]}
-                left={[0]}
+                top={[0, '32px']}
+                left={[0, '32px']}
                 right={[0]}
                 bottom={[0]}
-                position={['fixed', 'relative']}
+                position={['fixed']}
                 zIndex={[10, undefined]}
                 display={[(toggle && 'flex') || 'none', 'flex']}
                 borderRadius={['', '8px']}
