@@ -10,10 +10,12 @@ export const AdminLayout: React.FC = ({ children }) => {
             flexDirection={['column', 'row']}
             alignItems={[undefined, 'center']}
             padding={['88px 16px 16px 16px', '32px']}
-            justifyContent={[undefined, 'space-between']}
+            justifyContent={[undefined, 'flex-end']}
         >
             <Menu />
-            {children}
+            <Container width={['100%', 'calc(100vw - 364px)']}>
+                {children}
+            </Container>
         </Container>
     );
 };
