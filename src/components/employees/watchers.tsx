@@ -9,10 +9,10 @@ export const Watchers: React.FC = () => {
     const { allEmployees } = useAuthContext();
     const [watchers, setWatchers] = useState<string[][]>([]);
 
-    useEffect(() => {
+   useEffect(() => {
         if (allEmployees) {
             const filter = allEmployees.filter(
-                (row) => row[2].toLowerCase() === 'Manager'.toLowerCase(),
+                (row) => row[2].toLowerCase() === 'Vigia'.toLowerCase(),
             );
             setWatchers([...filter]);
         }
