@@ -10,6 +10,8 @@ export type AuthContextState = {
     data: UserData;
     allGasStations: string[][];
     allEmployees: string[][];
+    watchers: string[][];
+    managers: string[][];
 };
 
 export type AuthContextActionsProps = {
