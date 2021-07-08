@@ -13,7 +13,7 @@ const Employees: AdminPageProps = () => {
     return (
         <>
             <Head>
-                <title>{meaning('pages.employees')}</title>
+                <title>{meaning('pages.employees.name')}</title>
             </Head>
             <EmployeesContainer />
         </>

@@ -9,7 +9,7 @@ const GasStations: AdminPageProps = () => {
     return (
         <>
             <Head>
-                <title>{meaning('pages.gas-stations')}</title>
+                <title>{meaning('pages.gas-stations.name')}</title>
             </Head>
             <GasStationsContainer />
         </>

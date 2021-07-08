@@ -9,7 +9,7 @@ const Register: AdminPageProps = () => {
     return (
         <>
             <Head>
-                <title>{meaning('pages.register')}</title>
+                <title>{meaning('pages.register.name')}</title>
             </Head>
             <RegisterContainer />
         </>
