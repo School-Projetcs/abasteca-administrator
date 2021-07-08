@@ -30,6 +30,7 @@ export const Menu: React.FC = () => {
                     bg="background"
                     display={['flex', 'none']}
                     position="fixed"
+                    zIndex={[10, undefined]}
                     height={78}
                     top={0}
                     left={0}
@@ -47,6 +48,7 @@ export const Menu: React.FC = () => {
                 right={[0]}
                 bottom={[0]}
                 position={['fixed', 'relative']}
+                zIndex={[10, undefined]}
                 display={[(toggle && 'flex') || 'none', 'flex']}
                 borderRadius={['', '8px']}
             >
