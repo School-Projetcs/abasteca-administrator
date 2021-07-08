@@ -1,6 +1,3 @@
-import { Tokens } from '@constants';
-import { database } from '@services';
-import { parseCookies } from 'nookies';
 import React, {
     createContext,
     FC,
@@ -8,8 +5,6 @@ import React, {
     useMemo,
     useReducer,
 } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 import actions from './actions';
 import reducers from './reducers';
