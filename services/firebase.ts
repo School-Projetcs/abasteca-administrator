@@ -3,12 +3,12 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const clientCredentials = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    apiKey: 'AIzaSyA7kmV01gVAPhdc_hk2M1N3BszZzhzToNk',
+    authDomain: 'abasteca-startup.firebaseapp.com',
+    projectId: 'abasteca-startup',
+    storageBucket: 'abasteca-startup.appspot.com',
+    messagingSenderId: '150417801240',
+    appId: '1:150417801240:web:527edc66fc4cfa2583836d',
 };
 
 export const firebaseInit = () => {
