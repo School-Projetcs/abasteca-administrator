@@ -1,5 +1,5 @@
 import { capitalizeWord } from '@word-book';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
@@ -121,7 +121,7 @@ export const InputContainer: React.FC<InputContainerProps> = ({
 
     return (
         <>
-            <Container focused={focused} ref={inputRef}>
+            <Container id="for-forms" focused={focused} ref={inputRef}>
                 {children}
                 {label && <span id="label">{capitalizeWord(label)}</span>}
             </Container>
