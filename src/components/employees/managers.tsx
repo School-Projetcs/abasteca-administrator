@@ -14,7 +14,7 @@ export const Managers: React.FC = () => {
     useEffect(() => {
         if (allEmployees) {
             const filter = allEmployees.filter(
-                (row) => row[2].toLowerCase() === 'Manager'.toLowerCase(),
+                (row) => row[2].toLowerCase() === 'Gestor'.toLowerCase(),
             );
             setManagers([...filter]);
         }
